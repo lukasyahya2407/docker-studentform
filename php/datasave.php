@@ -1,11 +1,11 @@
 <?php
 //db_config
-$host = "localhost";
-$dbusername = "root";
-$dbpassword = "";
+$host = "db";
+$dbusername = "user";
+$dbpassword = "password";
 $dbname = "student_sample";
 // Create connection
-$conn = mysqli_connect ($host, $dbusername, $dbpassword, $dbname);
+$conn = mysqli_connect ($host, $dbusername, $dbpassword, $dbname);  
 if (mysqli_connect_error()){
     die('Connect Error ('. mysqli_connect_errno() .') '
     . mysqli_connect_error());
@@ -20,7 +20,7 @@ $alamat = filter_input(INPUT_POST, 'alamat');
 //cek data duplikat
 $duplicate=mysqli_query($conn,"select * from mahasiswa where nim='$nim'");
 if (mysqli_num_rows($duplicate)>0)
-{
+{   
 ?>
 <script language="JavaScript">
     if(!alert('Welcome to the jungle kid!'))
