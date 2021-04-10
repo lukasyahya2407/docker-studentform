@@ -1,18 +1,18 @@
-version: '3.3'
+version: '3'
 services:
-    #webform
+    #webservice
     web:
         build:
             context: ./php
-            dockerfile: Dockerfile    
-        
+            dockerfile: Dockerfile 
         container_name: phpform
-        depends_on:
-            - db 
         volumes:
             - ./php:/var/www/html/
         ports:
             - 8008:80
+        depends_on:
+            - db
+              
     #database       
     db:
         container_name: mysqlform
@@ -23,6 +23,5 @@ services:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: student_sample
             MYSQL_USER: user
-            MYSQL_PASSWORD: password
         ports:
             - 6033:3306

@@ -1,8 +1,8 @@
 <?php
 //db_config
 $host = "db";
-$dbusername = "user";
-$dbpassword = "password";
+$dbusername = "root";
+$dbpassword = "root";
 $dbname = "student_sample";
 // Create connection
 $conn = mysqli_connect ($host, $dbusername, $dbpassword, $dbname);  
@@ -23,20 +23,26 @@ if (mysqli_num_rows($duplicate)>0)
 {   
 ?>
 <script language="JavaScript">
-    if(!alert('Welcome to the jungle kid!'))
+    if(!alert('Another Data Located!'))
         {
             window.location.reload(true);
         }
-    document.location='index.html';
+    document.location='index.php';
 </script>
 <?php
 }
 //insert ke db
 else{
 $sql = "INSERT INTO mahasiswa (nim, nama, gender, alamat) values ('$nim','$nama','$gender','$alamat')";
-if ($conn->query($sql)){
-    echo '<script>alert("Welcome to the jungle kid!")</script>';
-}
+$result = mysqli_query($conn, $sql);
+if ($result){
+    ?>
+<script language="JavaScript">
+    (!alert('Welcome to the Jungle Kid!'))
+    document.location='show.php';
+</script>
+<?php
+ }
 //upami aya nu error
 else{
 echo "Error: ". $sql ."
