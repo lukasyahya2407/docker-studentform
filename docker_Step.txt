@@ -1,0 +1,15 @@
+1. docker kill containerid #trun off container
+2. docker container rm $(docker container ls –aq)  #remove container
+3. docker-compose up -d
+
+
+
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+
+touch /var/run/mysqld/mysqld.sock
+touch /var/run/mysqld/mysqld.pid
+chown -R mysql:mysql /var/run/mysqld/mysqld.sock
+chown -R mysql:mysql /var/run/mysqld/mysqld.pid
+chmod -R 644 /var/run/mysqld/mysqld.sock
+
+CREATE TABLE MANUALLY SHHHIIITTT

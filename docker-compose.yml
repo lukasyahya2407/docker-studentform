@@ -6,12 +6,13 @@ services:
             context: ./php
             dockerfile: Dockerfile 
         container_name: phpform
+        restart: always
         volumes:
             - ./php:/var/www/html/
         ports:
             - 8008:80
         depends_on:
-            - db
+            - db    
               
     #database       
     db:
@@ -23,5 +24,6 @@ services:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: student_sample
             MYSQL_USER: user
+            MYSQL_PASSWORD: userpass
         ports:
             - 6033:3306

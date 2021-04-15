@@ -1,0 +1,1 @@
+CREATE TABLE mahasiswa(nim int(7),nama varchar(50),gender char(1),alamat varchar(100),PRIMARY KEY (nim));

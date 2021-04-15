@@ -39,7 +39,7 @@ if ($result){
     ?>
 <script language="JavaScript">
     (!alert('Welcome to the Jungle Kid!'))
-    document.location='show.php';
+    document.location='index.php';
 </script>
 <?php
  }
